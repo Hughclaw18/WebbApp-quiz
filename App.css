@@ -1,0 +1,193 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(45deg, #3a86ff, #ff006e, #8338ec, #fb5607);
+  background-size: 300% 300%;
+  animation: gradientShift 6s ease infinite;
+  color: #fff;
+  text-align: center;
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 2px 2px #000;
+}
+
+/* Main Quiz Container */
+.quiz-container {
+  margin: 50px auto;
+  max-width: 800px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+#quiz-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+/* Options Styling */
+.options-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.options-container button {
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.options-container button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.options-container button:active {
+  background: #ff006e;
+  color: #fff;
+  transform: scale(1);
+}
+
+/* Styling for selected button (green) */
+.options-container button.selected {
+  background-color: #28a745; /* Green color for selected button */
+  color: white;
+  cursor: not-allowed; /* Disable clicking once selected */
+}
+
+/* Styling for incorrect answer (optional red) */
+.options-container button.incorrect {
+  background-color: #dc3545; /* Red color for incorrect option */
+  color: white;
+  cursor: not-allowed; /* Disable clicking once selected */
+}
+
+/* Control Buttons */
+.controls {
+  margin-top: 20px;
+}
+
+.control-btn {
+  background: #8338ec;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+  transition: background 0.2s;
+}
+
+.control-btn:hover {
+  background: #3a86ff;
+}
+
+.control-btn.hidden {
+  display: none;
+}
+
+/* Footer */
+footer {
+  margin-top: 50px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 10px 0;
+}
+
+footer p {
+  margin: 0;
+  color: #fff;
+}
+
+/* Position for question number in top-right */
+.question-info {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Styling for disabled (selected) button */
+.options-container button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed; /* Disable clicking */
+}
+
+/* Pop-up for showing score */
+#result-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#result-popup.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popup-content h3 {
+  color: #000000;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+#close-popup {
+  background: #ff006e;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#close-popup:hover {
+  background: #28a745;
+}
